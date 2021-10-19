@@ -1,13 +1,16 @@
-import net.valorweb.ecommerce.model.Produto;
-import org.junit.*;
+package net.valorweb.ecommerce;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class ConsultandoRegistrosTest {
-    private static EntityManagerFactory entityManagerFactory;
-    private EntityManager entityManager;
+public class EntityManagerTest {
+    protected static EntityManagerFactory entityManagerFactory;
+    protected EntityManager entityManager;
 
     @BeforeClass
     public static void setUpBeforeClass() {
@@ -29,13 +32,6 @@ public class ConsultandoRegistrosTest {
         entityManager.close();
     }
 
-    @Test
-    public void bustarPorId(){
-        Produto produto = entityManager.find(Produto.class, 1);
-
-        Assert.assertNotNull(produto);
-        Assert.assertEquals("Kindle", produto.getNome());
-    }
 
 
 }
